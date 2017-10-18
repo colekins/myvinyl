@@ -36,8 +36,12 @@
 //     .catch(ui.failure)
 // }
 //
+const test = function (event) {
+  console.log('hi')
+}
 
 const addHandlers = () => {
+  $('#test').on('click', test)
   // $('#sign-up').on('submit', onSignUp)
   // $('#login').on('submit', onSignIn)
   // $('#sign-out').on('submit', onSignOut)
