@@ -4,6 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const api = require('./api')
 const ui = require('./ui')
+const hide = require('./hide')
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -18,6 +19,11 @@ const onSignIn = (event) => {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(hide.toggleLogin)
+    .then(hide.togglePassword)
+    .then(hide.toggleSignout)
+    .then(hide.toggleSignup)
+    .then(hide.togglePanel)
     .catch(ui.signInFailure)
 }
 
@@ -25,6 +31,11 @@ const onSignOut = (event) => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
+    .then(hide.toggleLogin)
+    .then(hide.togglePassword)
+    .then(hide.toggleSignout)
+    .then(hide.toggleSignup)
+    .then(hide.togglePanel)
     .catch(ui.signOutFailure)
 }
 
@@ -39,7 +50,7 @@ const onChangePassword = (event) => {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#login').on('submit', onSignIn)
-  $('#sign-out').on('submit', onSignOut)
+  $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
 }
 

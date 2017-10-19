@@ -3,29 +3,30 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
+  $('#message').text('Signed up successfully! Please sign in.')
   $('#signupModal').modal('hide')
-  console.log('yoooooooo')
+  // console.log('yoooooooo')
 }
 
 const signUpFailure = function (error) {
-  $('#message').text('Error on sign up')
+  $('#signup-message').text('Error on sign up. Please try again.')
   console.error(error)
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('Signed in successfully')
-  console.log('signIn success ran. data is :', response)
+  $('#message').text('You are now signed in.')
+  // console.log('signIn success ran. data is :', response)
   store.user = response.user
+  $('#loginModal').modal('hide')
 }
 
 const signInFailure = function (error) {
-  $('#message').text('Error on sign in')
+  $('#login-message').text('Error on sign in. Please try again.')
   console.log('signIn failure ran. error is :', error)
 }
 
 const signOutSuccess = function () {
-  $('#message').text('Signed out successfully')
+  $('#message').text('You are now signed out.')
   console.log('signOut success ran. and nothing was returned')
   store.user = null
 }
@@ -38,10 +39,11 @@ const signOutFailure = function (error) {
 const changePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
   console.log('changePassword success ran. and nothing was returned')
+  $('#passwordModal').modal('hide')
 }
 
 const changePasswordFailure = function (error) {
-  $('#message').text('Error on change password')
+  $('#password-message').text('Error on change password')
   console.log('changePassword failure ran. error is :', error)
 }
 
