@@ -47,6 +47,10 @@ const changePasswordFailure = function (error) {
   console.log('changePassword failure ran. error is :', error)
 }
 
+const populateSuccess = function () {
+  console.log(store.user)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -55,5 +59,6 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure
+  changePasswordFailure,
+  populateSuccess
 }

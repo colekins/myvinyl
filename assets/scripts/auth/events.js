@@ -25,6 +25,8 @@ const onSignIn = (event) => {
     .then(hide.toggleSignup)
     .then(hide.togglePanel)
     .then(hide.toggleAlbumFields)
+    .then(api.populate)
+    .then(ui.populateSuccess)
     .catch(ui.signInFailure)
 }
 
@@ -48,6 +50,12 @@ const onChangePassword = (event) => {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
+
+// const populateAlbums = function (data) {
+//   event.preventDefault()
+//   api.populate(data)
+//   // .then(ui.allAlbumsSuccess)
+// }
 
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)

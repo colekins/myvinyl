@@ -11,8 +11,13 @@ const onAddAlbum = function (event) {
   api.create(data)
     .then(ui.addAlbumSuccess)
     .then(document.getElementById('add-album').reset())
-
 }
+
+// const onGetAlbums = function (data) {
+//   event.preventDefault()
+//   api.index(data)
+//     .then(ui.allAlbumsSuccess)
+// }
 
 const addHandlers = () => {
   $('#add-album').on('submit', onAddAlbum)
