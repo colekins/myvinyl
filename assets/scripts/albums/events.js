@@ -10,6 +10,8 @@ const onAddAlbum = function (event) {
   // console.log(data)
   api.create(data)
     .then(ui.addAlbumSuccess)
+    .then(document.getElementById('add-album').reset())
+
 }
 
 const addHandlers = () => {
