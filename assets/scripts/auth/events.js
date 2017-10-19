@@ -24,6 +24,7 @@ const onSignIn = (event) => {
     .then(hide.toggleSignout)
     .then(hide.toggleSignup)
     .then(hide.togglePanel)
+    .then(hide.toggleAlbumFields)
     .catch(ui.signInFailure)
 }
 
@@ -36,6 +37,7 @@ const onSignOut = (event) => {
     .then(hide.toggleSignout)
     .then(hide.toggleSignup)
     .then(hide.togglePanel)
+    .then(hide.toggleAlbumFields)
     .catch(ui.signOutFailure)
 }
 

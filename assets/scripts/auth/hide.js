@@ -23,10 +23,15 @@ const togglePanel = function () {
   // console.log(parentElement)
 }
 
+const toggleAlbumFields = function () {
+  $('#albumFields').toggleClass('hidden unhidden')
+}
+
 module.exports = {
   toggleLogin,
   togglePassword,
   toggleSignout,
   toggleSignup,
-  togglePanel
+  togglePanel,
+  toggleAlbumFields
 }
