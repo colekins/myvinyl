@@ -27,7 +27,7 @@ const signInFailure = function (error) {
 
 const signOutSuccess = function () {
   $('#message').text('You are now signed out.')
-  console.log('signOut success ran. and nothing was returned')
+  // console.log('signOut success ran. and nothing was returned')
   store.user = null
 }
 
