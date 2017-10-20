@@ -17,7 +17,12 @@ body {
 }
 
 .panel-body {
-  border-radius: 0
+  border-radius: 0;
+  // text-align: center;
+}
+
+.col-md-4 {
+  text-align: center;
 }
 
 .panel-heading {

@@ -11,6 +11,7 @@ const onAddAlbum = function (event) {
   api.create(data)
     .then(ui.addAlbumSuccess)
     .then(document.getElementById('add-album').reset())
+    .catch(ui.addAlbumFail)
 }
 
 const onDeleteAlbum = function (event) {
@@ -22,6 +23,7 @@ const onDeleteAlbum = function (event) {
   api.destroy(data)
     .then(ui.deleteSuccess)
     .then(panel.remove())
+    .catch(ui.deleteFail)
 }
 
 // const onGetAlbums = function (data) {
