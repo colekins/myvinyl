@@ -27,25 +27,25 @@ const signInFailure = function (error) {
 }
 
 const signOutSuccess = function () {
-  $('#message').text('You are now signed out.')
+  $('#message').text('You\'re now signed out.')
   $('#content').html('')
   // console.log('signOut success ran. and nothing was returned')
   store.user = null
 }
 
 const signOutFailure = function (error) {
-  $('#message').text('Error on sign out')
+  $('#message').text('Error on sign out.')
   console.log('signOut failure ran. error is :', error)
 }
 
 const changePasswordSuccess = function () {
-  $('#message').text('Changed password successfully')
+  $('#message').text('Changed password successfully.')
   console.log('changePassword success ran. and nothing was returned')
   $('#passwordModal').modal('hide')
 }
 
 const changePasswordFailure = function (error) {
-  $('#password-message').text('Error on change password')
+  $('#password-message').text('There was an error. Please try again.')
   console.log('changePassword failure ran. error is :', error)
 }
 

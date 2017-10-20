@@ -33,7 +33,7 @@
         </div>
       </nav>
       <div class="panel panel-info" id="msg-panel">
-        <div class="panel-heading message" id="message">Welcome! Login or sign up to store your collection.</div>
+        <div class="panel-heading message" id="message">Welcome! Login or sign up to start your collection.</div>
         <div class="panel-body hidden" id="albumFields"><h4>Add a Record:</h4>
           <form class="form-inline" id="add-album">
             <span class="form-name">Album: </span> <input type="text" name="album[title]" class="form-control" id="inlineFormInput" placeholder="Album Title">
@@ -44,42 +44,12 @@
       </div>
       <h2>Your Records</h2>
       <div class="row content" id="content">
-              <!-- <div class="col-md-4">
-                <div class="panel panel-default">
-                  <div class="panel-heading"><h3>Test</h3></div>
-                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                  Aliquam in felis sit amet augue.
-                  </div>
-                </div>
-              </div>
-            	<div class="col-md-4">
-              	<div class="panel panel-default">
-                  <div class="panel-heading"><h3>Test</h3></div>
-                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                  Aliquam in felis sit amet augue.
-                  </div>
-                </div>
-              </div>
-            	<div class="col-md-4">
-              	<div class="panel panel-default">
-                  <div class="panel-heading"><h3>Test</h3></div>
-                  <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                  Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                  dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                  Aliquam in felis sit amet augue.
-                  </div>
-                </div>
-              </div> -->
         </div>
-        <div class="panel-footer">
+        <!-- <div class="panel-footer">
          <div class="container">
            <p class="text-muted credit">MyVinyl - A Record Collection App</p>
          </div>
-       </div>
+       </div> -->
 
        <!--MODALS ////////////////////////////////////// -->
 
@@ -134,8 +104,30 @@
                  <span id="password-message"></span>
                 </div>
              <form id="change-password">
-             <input type="password" name="passwords[old]" id="change-password-old" class="form-control" placeholder="Old Passward">
+             <input type="password" name="passwords[old]" id="change-password-old" class="form-control" placeholder="Current Passward">
              <input type="password" name="passwords[new]" id="change-password-new" class="form-control" placeholder="New Password">
+              <div class="modal-body">
+                <br>
+              </div>
+              <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              </div>
+             </form>
+           </div>
+         </div>
+        </div>
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+           <div class="modal-dialog">
+           <div class="modal-content">
+                <div class="modal-header">
+                 <h2 class="modal-title edit-title">Edit Album</h2>
+                 <span id="edit-message" class="edit-message"></span>
+                </div>
+             <form id="edit-album">
+             <input type="text" name="album[title]" id="edit-title" class="form-control" value="Edit Title">
+             <input type="text" name="album[artist]" id="edit-artist" class="form-control" value="Edit Artist">
+             <input type="text" name="album[notes]" id="edit-notes" class="form-control" placeholder="Add Notes">
               <div class="modal-body">
                 <br>
               </div>

@@ -17,13 +17,24 @@ const onAddAlbum = function (event) {
 const onDeleteAlbum = function (event) {
   event.preventDefault()
   const button = event.target
-  const panel = button.parentElement.parentElement
+  const panel = button.parentElement.parentElement.parentElement
   const data = $(panel).attr('data-id')
   console.log(data)
   api.destroy(data)
     .then(ui.deleteSuccess)
     .then(panel.remove())
     .catch(ui.deleteFail)
+}
+
+const openEdit = function (event) {
+  event.preventDefault()
+  const button = event.target
+  const title = button.parentElement.previousSibling.previousSibling
+  const albumTitle = title.firstChild
+  const albumArtist = albumTitle.nextSibling.nextSibling
+  $('#edit-message').text(title.textContent)
+  document.getElementById('edit-title').value = albumTitle.textContent
+  document.getElementById('edit-artist').value = albumArtist.textContent
 }
 
 // const onGetAlbums = function (data) {
@@ -35,6 +46,7 @@ const onDeleteAlbum = function (event) {
 const addHandlers = () => {
   $('#add-album').on('submit', onAddAlbum)
   $('#content').on('click', '#delete-album', onDeleteAlbum)
+  $('#content').on('click', '#edit-album', openEdit)
 }
 
 module.exports = {

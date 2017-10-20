@@ -17,7 +17,7 @@ const addAlbumFail = function () {
 
 const deleteSuccess = function (data) {
   console.log(data)
-  $('#message').text('Deleted from your collection.')
+  $('#message').text('Album deleted.')
 }
 
 const deleteFail = function (data) {

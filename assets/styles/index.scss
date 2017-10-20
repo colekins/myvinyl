@@ -21,13 +21,23 @@ body {
   // text-align: center;
 }
 
+.edit-title {
+  margin-bottom: -25px;
+}
+
+.edit-message {
+  font-style: italic;
+}
+
 .col-md-4 {
   text-align: center;
 }
 
 .panel-heading {
   text-align: center;
-  font-weight: bold
+  font-weight: bold;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 // .form-name {
