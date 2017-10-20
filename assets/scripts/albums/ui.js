@@ -2,11 +2,27 @@
 
 const store = require('../store')
 const albumTemplate = require('../templates/new-album.handlebars')
+const art = require('album-art')
+
+// art('The Beatles', 'Abbey Road', 'extralarge', function (err, url) {
+//   console.log(url)
+//   console.log(err)
+// })
 
 const addAlbumSuccess = function (data) {
   // console.log(data)
   const albumHtml = albumTemplate({ album: data })
   store.newAlbum = data
+  const artist = data.album.artist
+  const album = data.album.title
+  const idTag = data.album.id
+  let imgLink
+  art(artist, album, 'large', function (err, url) {
+    imgLink = url
+    console.log(err)
+  })
+  console.log(imgLink)
+  // const panel = $('div').data(idTag)
   $('.content').append(albumHtml)
   $('#message').text(data.album.title + ' has been added to your collection!')
 }
@@ -22,12 +38,12 @@ const addAlbumFail = function () {
 }
 
 const deleteSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#message').text('Album deleted.')
 }
 
 const deleteFail = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#message').text('There was an error. Please try again.')
 }
 

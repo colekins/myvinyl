@@ -19,7 +19,7 @@ const onDeleteAlbum = function (event) {
   const button = event.target
   const panel = button.parentElement.parentElement.parentElement
   const data = $(panel).attr('data-id')
-  console.log(data)
+  // console.log(data)
   api.destroy(data)
     .then(ui.deleteSuccess)
     .then(panel.remove())
@@ -42,7 +42,7 @@ const openEdit = function (event) {
   $('#edit-message').text(albumTitle.textContent + ' by ' + albumArtist.textContent)
   document.getElementById('edit-title').value = albumTitle.textContent
   document.getElementById('edit-artist').value = albumArtist.textContent
-  console.log(albumId)
+  // console.log(albumId)
 }
 
 const onEditAlbum = function (event) {
