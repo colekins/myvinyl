@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const albumsTemplate = require('../templates/album-listing.handlebars')
 
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully! Please sign in.')
@@ -47,8 +48,10 @@ const changePasswordFailure = function (error) {
   console.log('changePassword failure ran. error is :', error)
 }
 
-const populateSuccess = function () {
+const populateSuccess = function (data) {
   console.log(store.user)
+  const albumsHtml = albumsTemplate({ albums: data.albums })
+  $('.content').append(albumsHtml)
 }
 
 module.exports = {

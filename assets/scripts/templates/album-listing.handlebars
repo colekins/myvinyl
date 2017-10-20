@@ -1,0 +1,18 @@
+{{#each albums as |album|}}
+
+  <!--
+  Don't uncomment yet -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+  <div class="col-md-4" data-id="{{album.id}}">
+    <div class="panel panel-default">
+      <div class="panel-heading"><h3>{{album.title}}</h3><h5>by {{album.artist}}</h5></div>
+      {{#if album.description}}
+        <div class="panel-body">{{album.description}}</div>
+      {{else}}
+        <div class="panel-body">No notes.</div>
+      {{/if}}
+      <li><button id="clearBook" class="btn btn-default">Delete</button></li>
+    </div>
+  </div>
+{{/each}}
