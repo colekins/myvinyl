@@ -49,8 +49,10 @@ const changePasswordFailure = function (error) {
 }
 
 const populateSuccess = function (data) {
-  console.log(store.user)
+  // console.log(store.user)
   const albumsHtml = albumsTemplate({ albums: data.albums })
+  store.albums = data.albums
+  console.log(data.albums)
   $('.content').append(albumsHtml)
 }
 

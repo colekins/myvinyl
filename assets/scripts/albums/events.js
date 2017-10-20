@@ -13,6 +13,17 @@ const onAddAlbum = function (event) {
     .then(document.getElementById('add-album').reset())
 }
 
+const onDeleteAlbum = function (event) {
+  event.preventDefault()
+  const button = event.target
+  const panel = button.parentElement.parentElement
+  const data = $(panel).attr('data-id')
+  console.log(data)
+  api.destroy(data)
+    .then(ui.deleteSuccess)
+  //   .then(document.getElementById('add-album').reset())
+}
+
 // const onGetAlbums = function (data) {
 //   event.preventDefault()
 //   api.index(data)
@@ -21,6 +32,7 @@ const onAddAlbum = function (event) {
 
 const addHandlers = () => {
   $('#add-album').on('submit', onAddAlbum)
+  $('#content').on('click', '#delete-album', onDeleteAlbum)
 }
 
 module.exports = {

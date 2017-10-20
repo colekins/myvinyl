@@ -12,6 +12,18 @@ const create = function (data) {
     data
   })
 }
+
+const destroy = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/albums/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  create
+  create,
+  destroy
 }
