@@ -15,7 +15,7 @@ const signUpFailure = function (error) {
 }
 
 const signInSuccess = function (response) {
-  $('#message').text('You are now signed in.')
+  $('#message').text('You\'re now signed in.')
   // console.log('signIn success ran. data is :', response)
   store.user = response.user
   $('#loginModal').modal('hide')
