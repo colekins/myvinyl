@@ -27,6 +27,10 @@ const toggleAlbumFields = function () {
   $('#albumFields').toggleClass('hidden unhidden')
 }
 
+// const carousel = function () {
+//   $('#coverSlide').toggleClass('hidden unhidden')
+// }
+
 module.exports = {
   toggleLogin,
   togglePassword,

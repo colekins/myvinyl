@@ -3,6 +3,10 @@
 const store = require('../store')
 const albumsTemplate = require('../templates/album-listing.handlebars')
 
+const carousel = function () {
+  $('#coverSlide').toggleClass('hidden unhidden')
+}
+
 const signUpSuccess = function (data) {
   $('#message').text('Signed up successfully! Please sign in.')
   $('#signupModal').modal('hide')
@@ -18,7 +22,9 @@ const signInSuccess = function (response) {
   $('#message').text('You\'re now signed in.')
   // console.log('signIn success ran. data is :', response)
   store.user = response.user
+  carousel()
   $('#loginModal').modal('hide')
+  $('#mainheader').text('Your collection:')
 }
 
 const signInFailure = function (error) {
@@ -29,7 +35,8 @@ const signInFailure = function (error) {
 const signOutSuccess = function () {
   $('#message').text('You\'re now signed out.')
   $('#content').html('')
-  // console.log('signOut success ran. and nothing was returned')
+  carousel()
+  $('#mainheader').text('Sign in to start your collection.')
   store.user = null
 }
 
