@@ -40,6 +40,7 @@ const onSignOut = (event) => {
     .then(hide.toggleSignup)
     .then(hide.togglePanel)
     .then(hide.toggleAlbumFields)
+    .then(document.getElementById('login').reset())
     .catch(ui.signOutFailure)
 }
 

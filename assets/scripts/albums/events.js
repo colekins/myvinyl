@@ -21,7 +21,7 @@ const onDeleteAlbum = function (event) {
   console.log(data)
   api.destroy(data)
     .then(ui.deleteSuccess)
-  //   .then(document.getElementById('add-album').reset())
+    .then(panel.remove())
 }
 
 // const onGetAlbums = function (data) {
