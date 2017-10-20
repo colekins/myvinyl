@@ -23,7 +23,19 @@ const destroy = function (data) {
   })
 }
 
+const update = function (data, albumId) {
+  return $.ajax({
+    url: config.apiOrigin + '/albums/' + albumId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   create,
-  destroy
+  destroy,
+  update
 }

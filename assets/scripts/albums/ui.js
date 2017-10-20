@@ -11,6 +11,12 @@ const addAlbumSuccess = function (data) {
   $('#message').text(data.album.title + ' has been added to your collection!')
 }
 
+const editAlbumSuccess = function (data) {
+  store.newAlbum = data
+  $('#message').text(data.album.title + ' by ' + data.album.artist + ' has been updated.')
+  $('#editModal').modal('hide')
+}
+
 const addAlbumFail = function () {
   $('#message').text('There was an error. Please try again.')
 }
@@ -29,5 +35,6 @@ module.exports = {
   addAlbumSuccess,
   deleteSuccess,
   addAlbumFail,
-  deleteFail
+  deleteFail,
+  editAlbumSuccess
 }

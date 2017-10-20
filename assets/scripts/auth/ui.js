@@ -53,7 +53,7 @@ const populateSuccess = function (data) {
   // console.log(store.user)
   const albumsHtml = albumsTemplate({ albums: data.albums })
   store.albums = data.albums
-  console.log(data.albums)
+  // console.log(data.albums)
   $('.content').append(albumsHtml)
 }
 

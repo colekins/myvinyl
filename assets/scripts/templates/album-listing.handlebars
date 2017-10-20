@@ -6,7 +6,7 @@
  <!-- Developers, why are we using data-id and not just id? -->
   <div class="col-md-4" data-id="{{album.id}}">
       <div class="panel panel-default">
-        <div class="panel-heading"><h3>{{album.title}} </h3><h6>by </h6><h6>{{album.artist}}</h6></div>
+        <div class="panel-heading"><h3>{{album.title}} </h3><h6>{{album.artist}}</h6></div>
         <div class="panel-body">{{#if album.notes}}
           <p>{{album.notes}}</p>
         {{else}}
