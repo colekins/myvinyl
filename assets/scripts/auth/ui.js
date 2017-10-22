@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const albumsTemplate = require('../templates/album-listing.handlebars')
+const art = require('album-art')
 
 const carousel = function () {
   $('#coverSlide').toggleClass('hidden unhidden')
@@ -56,12 +57,28 @@ const changePasswordFailure = function (error) {
   console.log('changePassword failure ran. error is :', error)
 }
 
+const albumCover = function (id, img) {
+  const panel = document.getElementsByClassName(id)
+  const albImage = document.createElement('img', img)
+  albImage.src = (img)
+  $(panel).find('p').append(albImage)
+}
+
 const populateSuccess = function (data) {
-  // console.log(store.user)
-  const albumsHtml = albumsTemplate({ albums: data.albums })
   store.albums = data.albums
-  // console.log(data.albums)
+  console.log(store.albums, store.albums[0].image)
+  const albumsHtml = albumsTemplate({ albums: store.albums })
   $('.content').append(albumsHtml)
+  for (let i = 0; i < store.albums.length; i++) {
+    const artist = store.albums[i].artist
+    const title = store.albums[i].title
+    art(artist, title, 'large', function (err, url) {
+      store.albums[i].image = url
+      const error = err
+      albumCover(store.albums[i].id, store.albums[i].image)
+    })
+  }
+  // albumCover()
 }
 
 module.exports = {

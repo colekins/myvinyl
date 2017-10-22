@@ -13,16 +13,18 @@ const addAlbumSuccess = function (data) {
   // console.log(data)
   const albumHtml = albumTemplate({ album: data })
   store.newAlbum = data
-  const artist = data.album.artist
-  const album = data.album.title
-  const idTag = data.album.id
-  let imgLink
-  art(artist, album, 'large', function (err, url) {
-    imgLink = url
-    console.log(err)
-  })
-  console.log(imgLink)
-  // const panel = $('div').data(idTag)
+  // const artist = data.album.artist
+  // const album = data.album.title
+  // const idTag = data.album.id
+  // let imgLink
+  // art(artist, album, 'extralarge', function (err, url) {
+  //   imgLink = url
+  //   console.log(err)
+  // })
+  // console.log(imgLink
+  //   // trying to target newly added album panel.. not working
+  // const panel = $('div[dataid=' + idTag + ']')
+  // console.log(panel)
   $('.content').append(albumHtml)
   $('#message').text(data.album.title + ' has been added to your collection!')
 }
