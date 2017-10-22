@@ -59,7 +59,7 @@ const changePasswordFailure = function (error) {
 
 const albumCover = function (id, img) {
   const panel = document.getElementsByClassName(id)
-  const albImage = document.createElement('img', img)
+  const albImage = document.createElement('img')
   albImage.src = (img)
   $(panel).find('p').append(albImage)
 }
