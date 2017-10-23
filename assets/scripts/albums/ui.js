@@ -2,7 +2,8 @@
 
 const store = require('../store')
 const albumTemplate = require('../templates/new-album.handlebars')
-const art = require('album-art')
+// const art = require('album-art')
+const art = require('../getart')
 
 const albumCover = function (id, img) {
   const newPanel = document.getElementsByClassName(id)

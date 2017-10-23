@@ -2,7 +2,8 @@
 
 const store = require('../store')
 const albumsTemplate = require('../templates/album-listing.handlebars')
-const art = require('album-art')
+// const art = require('album-art')
+const art = require('../getart.js')
 
 const carousel = function () {
   $('#coverSlide').toggleClass('hidden unhidden')
@@ -66,7 +67,6 @@ const albumCover = function (id, img) {
 
 const populateSuccess = function (data) {
   store.albums = data.albums
-  // console.log(store.albums)
   const albumsHtml = albumsTemplate({ albums: store.albums })
   $('.content').append(albumsHtml)
   for (let i = 0; i < store.albums.length; i++) {
@@ -78,7 +78,6 @@ const populateSuccess = function (data) {
       albumCover(store.albums[i].id, store.albums[i].image)
     })
   }
-  // albumCover()
 }
 
 module.exports = {
