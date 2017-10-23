@@ -23,6 +23,7 @@ const fetchArt = function (artist, album) {
 const addAlbumSuccess = function (data) {
   const albumHtml = albumTemplate({ album: data })
   store.newAlbum = data.album
+  store.albums.push(data.album)
   $('.content').append(albumHtml)
   $('#message').text(data.album.title + ' has been added to your collection!')
   fetchArt(store.newAlbum.artist, store.newAlbum.title)

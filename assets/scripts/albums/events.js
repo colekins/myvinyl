@@ -3,6 +3,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 
 const onAddAlbum = function (event) {
   event.preventDefault()
@@ -41,7 +42,11 @@ const openEdit = function (event) {
   $('#edit-message').text(albumTitle.textContent + ' by ' + albumArtist.textContent)
   document.getElementById('edit-title').value = albumTitle.textContent
   document.getElementById('edit-artist').value = albumArtist.textContent
-  // console.log(albumId)
+  const current = store.albums.filter(function (album) { return album.id == albumId })
+  if (current[0].notes === undefined) {
+  } else {
+    document.getElementById('edit-notes').value = current[0].notes
+  }
 }
 
 const onEditAlbum = function (event) {
@@ -51,6 +56,10 @@ const onEditAlbum = function (event) {
   const albumArtist = albumTitle.nextSibling
   albumTitle.textContent = data.album.title
   albumArtist.textContent = data.album.artist
+  const index = store.albums.map(function (album) {
+    return album.id
+  }).indexOf(parseInt(albumId))
+  store.albums[index].notes = data.album.notes
   api.update(data, albumId)
     .then(ui.editAlbumSuccess)
   //   .then(document.getElementById('add-album').reset())

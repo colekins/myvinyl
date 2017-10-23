@@ -66,7 +66,7 @@ const albumCover = function (id, img) {
 
 const populateSuccess = function (data) {
   store.albums = data.albums
-  // console.log(store.albums, store.albums[0].image)
+  // console.log(store.albums)
   const albumsHtml = albumsTemplate({ albums: store.albums })
   $('.content').append(albumsHtml)
   for (let i = 0; i < store.albums.length; i++) {
