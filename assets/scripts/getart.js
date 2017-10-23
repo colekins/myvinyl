@@ -19,7 +19,7 @@ module.exports = function (artist, album, size, cb) {
 	var artist = artist.replace ("&", "and")
 	var options = {
 	  host: 'ws.audioscrobbler.com',
-	  port: 80,
+	  // port: 80,
 	  path: encodeURI('/2.0/?format=json&api_key=' + apiKey + '&method=' + method + '.getinfo&artist=' + artist + '&album=' + album)
 	}
 	http.get(options, function(resp){
