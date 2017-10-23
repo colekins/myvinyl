@@ -8,7 +8,7 @@ body {
 
 .navbar-brand {
   font-size: 39px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .navbar {
@@ -19,6 +19,11 @@ body {
 
 .modal-title {
   font-weight: bold;
+}
+
+.navlogo {
+  height: 52px;
+  width: auto;
 }
 
 .editfield {
@@ -32,6 +37,8 @@ body {
 
 .mainheader {
   text-align: center;
+  font-weight: 300;
+  font-size: 29px;
 }
 
 img {
