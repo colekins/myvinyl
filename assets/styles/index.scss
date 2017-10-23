@@ -3,6 +3,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   padding-top: 22px;
+  font-family: Helvetica;
 }
 
 .navbar-brand {
@@ -14,6 +15,15 @@ body {
   margin-bottom: 0;
   padding-bottom: 7px;
   padding-top: 7px;
+}
+
+.modal-title {
+  font-weight: bold;
+}
+
+.navbar-default .navbar-brand {
+  color: black;
+  font-family: 'Patua One', cursive;
 }
 
 .mainheader {
