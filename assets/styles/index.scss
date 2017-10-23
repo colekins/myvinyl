@@ -7,7 +7,7 @@ body {
 }
 
 .navbar-brand {
-  font-size: 33px;
+  font-size: 39px;
   font-weight: bolder;
 }
 
@@ -123,6 +123,10 @@ h2 {
     padding-bottom: 12px;
     }
   .navbar {
+    text-align: center;
+  }
+  .navbar-brand {
+    font-size: 30px;
     text-align: center;
   }
 }
