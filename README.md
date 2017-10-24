@@ -1,8 +1,6 @@
-# MyVinyl | A Record Collection App
+# MyVinyl -- A Record Collection App
 
-### [Live App](https://colekins.github.io/myvinyl/)
-### [Deployed Heroku API]https://gentle-fjord-76168.herokuapp.com/
-### [API Repository](https://github.com/colekins/myvinyl_api)
+### [Live App](https://colekins.github.io/myvinyl/) | [Deployed API](https://gentle-fjord-76168.herokuapp.com/) | [API Repository](https://github.com/colekins/myvinyl_api)
 
 MyVinyl is an app for music fans and record collectors. It allows users to digitally store their record collections. Once a record is added to you collection, users are able to add their notes on the release, which can be altered at anytime. The app also works with the [Last.fm API](https://www.last.fm/api) to automatically populate album covers for all entires in the user's collection. This capability relies on the user entering valid data into the album title and artist fields.
 
@@ -41,7 +39,7 @@ For the front-end, I tried to rely on bootstrap's column system as much as possi
 After reaching the point of meeting the project's basic requirements, I decided to shift my focus on integrating a third party API. A big goal of mine was to integrate album covers into the front-end dynamically. I used bootstrap panels to display my resources in a clean grid for this very reason. Ultimately I found an npm package that integrated with last.fm's API. With a few custom edits to their script, I was finally able to sucessfully integrate its funcionality into my front end. Upon user sign-in, or upon the creation of a new album resource, the app fetches the album art URL and creates a new image element within seconds. I was really pleased to have this feature integrated, after working on it for the better part of my weekend.
 
 ### Goals for Future Versions
--More album info (potentially populated from the same API)
--Sorting options
--Sharing capabilities
--Better mobile responsiveness
+- More album info (potentially populated from the same API)
+- Sorting options
+- Sharing capabilities
+- Better mobile responsiveness
