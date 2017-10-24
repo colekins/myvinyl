@@ -55,6 +55,18 @@ const onChangePassword = (event) => {
     .catch(ui.changePasswordFailure)
 }
 
+const onClearSignup = (event) => {
+  document.getElementById('sign-up').reset()
+}
+
+const onClearLogin = (event) => {
+  document.getElementById('login').reset()
+}
+
+const onClearPass = (event) => {
+  document.getElementById('change-password').reset()
+}
+
 // const populateAlbums = function (data) {
 //   event.preventDefault()
 //   api.populate(data)
@@ -66,6 +78,9 @@ const addHandlers = () => {
   $('#login').on('submit', onSignIn)
   $('#sign-out').on('click', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#clearSignup').on('click', onClearSignup)
+  $('#clearLogin').on('click', onClearLogin)
+  $('#clearPass').on('click', onClearPass)
 }
 
 module.exports = {
