@@ -25,9 +25,9 @@ const onSignIn = (event) => {
     .then(hide.toggleSignup)
     .then(hide.togglePanel)
     .then(hide.toggleAlbumFields)
-    // .then(ui.carousel)
     .then(api.populate)
     .then(ui.populateSuccess)
+    .then(ui.albumCount)
     .catch(ui.signInFailure)
 }
 

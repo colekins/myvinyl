@@ -80,6 +80,15 @@ const populateSuccess = function (data) {
   }
 }
 
+const albumCount = function () {
+  if (store.albums.length === 0) {
+  } else if (store.albums.length === 1) {
+    $('#message').text('Welcome! You have 1 record in your collection.')
+  } else {
+    $('#message').text('Welcome back! There are ' + store.albums.length + ' albums in your collection.')
+  }
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -89,5 +98,6 @@ module.exports = {
   signOutFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  populateSuccess
+  populateSuccess,
+  albumCount
 }
