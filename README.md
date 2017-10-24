@@ -42,4 +42,5 @@ After reaching the point of meeting the project's basic requirements, I decided 
 - More album info (potentially populated from the same API)
 - Sorting options
 - Sharing capabilities
+- Search function
 - Better mobile responsiveness
