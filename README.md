@@ -1,59 +1,47 @@
-# browser-template
+# MyVinyl | A Record Collection App
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+### [Live App](https://colekins.github.io/myvinyl/)
+### [Deployed Heroku API]https://gentle-fjord-76168.herokuapp.com/
+### [API Repository](https://github.com/colekins/myvinyl_api)
 
-## Installation
+MyVinyl is an app for music fans and record collectors. It allows users to digitally store their record collections. Once a record is added to you collection, users are able to add their notes on the release, which can be altered at anytime. The app also works with the [Last.fm API](https://www.last.fm/api) to automatically populate album covers for all entires in the user's collection. This capability relies on the user entering valid data into the album title and artist fields.
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+## Technologies
 
-## Structure
+- HTML
+- CSS/SASS
+- Bootstrap
+- Javascript
+- jQuery
+- AJAX
+- Handlebars
+- Ruby on Rails
+- last.fm API
+- Heroku/Github Pages
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+## Planning
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+### User Stories
+- As a user, I want to store and categorize my music collection.
+- As a user, I want to be able to securely log in and out.
+- As a user, I would like to store notes or ratings for specific records.
+- As a user, I would like to see the album art of the records in my collection.
+- As a user, I would like to share my music colletion with others.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+### Wireframes & ERD
 
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
+- [Wireframes](https://i.imgur.com/Au76j7m.jpg)
+- [Entity Relationship Diagram](https://i.imgur.com/CUu7krU.jpg)
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+## Development
+After high-level planning and project set-up, I began development on the API side. Working methodically through this portion was crucial, as it would be laying the groundwork for the rest of my project. I made sure to work slowly and deliberately in this stage so that I could make sure I was setting myself up for success down the road. I made sure to test all authentication and resource endpoints using CURL scripts. Once I was sure that all routes were functioning for both my 'users' and 'albums' models, I was able to create the 'one to many' relationship between them.
 
-## Tasks
+For the front-end, I tried to rely on bootstrap's column system as much as possible to keep the design clean and responsive. Bootstrap's panel classes ended up being a good tool to display my resources. I ultimately was able to integrate those into my handlebars templates so that the app would update dynamically. Creating and testing the AJAX calls and corresponding front-end updates took quite a bit of time. Again during this phase it was important to work slowly and methodically, tackling one issue at a time. I worked through all my API actions one at a time: Create, Get, Delete, and then Update.
 
-Developers should run these often!
+After reaching the point of meeting the project's basic requirements, I decided to shift my focus on integrating a third party API. A big goal of mine was to integrate album covers into the front-end dynamically. I used bootstrap panels to display my resources in a clean grid for this very reason. Ultimately I found an npm package that integrated with last.fm's API. With a few custom edits to their script, I was finally able to sucessfully integrate its funcionality into my front end. Upon user sign-in, or upon the creation of a new album resource, the app fetches the album art URL and creates a new image element within seconds. I was really pleased to have this feature integrated, after working on it for the better part of my weekend.
 
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+### Goals for Future Versions
+-More album info (potentially populated from the same API)
+-Sorting options
+-Sharing capabilities
+-Better mobile responsiveness
