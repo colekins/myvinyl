@@ -1,4 +1,4 @@
-# MyVinyl -- A Record Collection App
+# MyVinyl - A Record Collection App
 
 ### [Live App](https://colekins.github.io/myvinyl/) | [Deployed API](https://gentle-fjord-76168.herokuapp.com/) | [API Repository](https://github.com/colekins/myvinyl_api)
 
